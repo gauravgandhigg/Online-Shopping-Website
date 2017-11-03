@@ -1,0 +1,80 @@
+<html>
+<head>
+<body bgcolor="#c8c8c8">
+	
+	<form action="log.html" onsubmit="return func()">
+            <fieldset>
+	<h1><font size="20">Registration Form</font></h1>
+	Enter Full Name:</br>
+	<input type="text" id="name" required></br>
+	<br>Enter e-mail ID:</br>
+	<input type="text" id="mail" required></br></br>
+	Enter Mobile No:
+	<br><input type="number" id="mob" required></br></br>
+	Enter Password:
+	<br><input type="password" id="pass" required></br></br>
+	Gender:
+	<br><input type="radio" name="gender" value="male" checked> Male
+  	<input type="radio" name="gender" value="female"> Female</br></br>
+	Enter Address:
+	<br><textarea type="text" id="add" size="50" required></textarea></br></br>
+	Enter pincode:
+	<br><input type="number" id="pin" required></br></br>
+	<label for="file">Choose Profile picture to upload</label></br>
+  	<input type="file" id="file" name="file" multiple></br></br>
+	<input type="checkbox" name="vehicle1" value="Bike"> I Like T-Shirts<br>
+  	<input type="checkbox" name="vehicle2" value="Car"> I Like Shirts<br>
+  	<input type="checkbox" name="vehicle3" value="Cycle" checked> I Like Jeans<br></br>
+	<input type="reset" value="Reset"> <input type="submit" value="Submit">
+	</form>
+    </fieldset>
+        <style type="text/css">
+            fieldset { border-color:#000000;
+                       border-style: groove;
+                       border-witdh: medium;
+                       margin-top: 30px;
+                       margin-left: 30px;
+                       margin-right: 30px;
+                       margin-bottom:  30px;
+                       background-color: #ccffff;
+                       
+                       
+            }   
+        </style>
+	<script type="text/javascript">
+		function func()
+		{
+			var pin=document.getElementById("pin").value;
+			var mob=document.getElementById("mob").value;
+			var pass=document.getElementById("pass").value;
+			var mail=document.getElementById("mail").value;
+			var pass1="Shreeram";
+			submitOK = "true";
+			if(pin.length>6)
+			{
+				alert("Please enter valid Pincode.");
+				submitOK="false";
+			}
+			if(mob.length!=10)
+			{
+				alert("Please enter valid Mobile Number.");
+				submitOK="false";
+			}
+			if(pass!=pass1)
+			{
+				alert("Please enter valid Password.");
+				submitOK="false";
+			}
+			var email=mail.indexOf("@")
+			if(email<1)
+			{
+				alert("Please enter valid Email ID.");
+				submitOK="false";
+			}
+			if(submitOK == "false")
+				return false;
+		}
+	</script>
+</body>
+</head>
+</html>

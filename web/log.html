@@ -1,0 +1,58 @@
+<html>
+<head>
+<body bgcolor="#c8c8c8">
+                <form action="start.jsp" onsubmit="return func()">
+                    <fieldset>
+                        <h1><font size="20" >Login Form</font></h1>
+                <br>Enter Email ID:
+                </br><input type="text" id="mail" required></br>
+               </br> Enter Password:
+                <br><input type="password" id="pass" required></br>
+                </br><input type="reset" value="Reset"> <input type="submit" value="Submit"></br>
+                </br><a href="reg.html">Click here to Register...</a></br>
+                </br>
+                </fieldset>
+                </form>
+        <style type="text/css">
+            h1{
+                font-family: arial;
+                font-style: normal;
+            }
+            fieldset { border-color:#000000;
+                       border-style: groove; 
+                       margin-top: 110px;
+                       margin-left: 430px;
+                       margin-right: 430px;
+                       margin-bottom:  300px;
+                       background-color: #ccffff;
+                       padding: 30px 5px 50px 120px;
+            }
+            
+            
+        </style>
+
+	<script type="text/javascript">
+		function func()
+		{
+			var pass=document.getElementById("pass").value;
+			var mail=document.getElementById("mail").value;
+			var pass1="Shreeram";
+			submitOK = "true";
+			if(pass!=pass1)
+			{
+				alert("Please enter valid Password.");
+				submitOK="false";
+			}
+			var email=mail.indexOf("@")
+			if(email<1)
+			{
+				alert("Please enter valid Email ID.");
+				submitOK="false";
+			}
+			if(submitOK == "false")
+				return false;
+		}
+	</script>
+</body>
+</head>
+</html>
